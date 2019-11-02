@@ -1,11 +1,20 @@
 import React from 'react';
 import useForm from 'react-hook-form';
+import User from '../../containers/User.Container';
+import useApi from '../../services/useApi';
 
 const Home = () => {
   const { handleSubmit, register, errors } = useForm();
 
-  const onSubmit = values => {
+  let user = User.useContainer();
+  const fetchData = useApi();
+
+  const onSubmit = async values => {
     console.log(values);
+    user.dispatch({ type: 'onLogin' });
+    const response = await fetchData('POST', '/auth', JSON.stringify(values));
+
+    console.log(response);
   };
 
   return (
@@ -13,16 +22,16 @@ const Home = () => {
       <input
         name="email"
         ref={register({
-          required: 'Required'
+          required: 'El campo esta vacio'
         })}
       />
       {errors.email && errors.email.message}
 
       <input
-        name="username"
+        name="password"
         type="password"
         ref={register({
-          required: 'Required'
+          required: 'El campo esta vacio'
         })}
       />
       {errors.username && errors.username.message}

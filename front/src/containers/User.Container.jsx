@@ -6,7 +6,7 @@ const initialState = {
   emai: '',
   name: '',
   address: '',
-  authed: false,
+  authentication: false,
   token: '',
   photography: ''
 };
@@ -16,7 +16,12 @@ function reducer(state, action) {
     case 'onLogin':
       return {
         ...state,
-        authed: true
+        authentication: true
+      };
+    case 'onLogout':
+      return {
+        ...state,
+        authentication: false
       };
     default: {
       throw Error();
@@ -30,7 +35,7 @@ function useUser() {
   const PrivateRoute = ({ component: Component }) => (
     <Route
       render={() =>
-        state.authed === true ? <Component /> : <Redirect to="/" />
+        state.authentication === true ? <Component /> : <Redirect to="/" />
       }
     />
   );
@@ -38,7 +43,11 @@ function useUser() {
   const PublicRoute = ({ component: Component }) => (
     <Route
       render={() =>
-        state.authed === false ? <Component /> : <Redirect to="/roles" />
+        state.authentication === false ? (
+          <Component />
+        ) : (
+          <Redirect to="/roles" />
+        )
       }
     />
   );
