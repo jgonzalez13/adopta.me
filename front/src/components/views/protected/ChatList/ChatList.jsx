@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 //Components
 import ChatCard from '../ChatCard/ChatCard';
 
-//Bootstrap
+//Bootstrap components
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
+//Styles
 import './ChatList.sass';
 
 const ChatList = () => {
@@ -62,8 +63,38 @@ const ChatList = () => {
           </Container>
         </Tab>
         <Tab eventKey="profile" title="Interesados">
-          <Container className="d-flex justify-content-center align-items-center pt-5">
-            <Row>
+          <Container className="d-flex justify-content-center align-items-center pt-5 chat-element-container">
+            <Row className="chat-row">
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
               <Col xs={12} sm={12}>
                 <ChatCard />
               </Col>
