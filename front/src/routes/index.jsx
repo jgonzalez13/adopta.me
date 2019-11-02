@@ -8,7 +8,7 @@ import User from '../containers/User.Container';
 // ? Components
 import NavBar from '../components/views/protected/NavBar/NavBar';
 
-const HomeView = lazy(() => import('../components/views/Home.container'));
+const HomeView = lazy(() => import('../components/views/Home/Home.container'));
 
 const TestView = lazy(() => import('../components/views/protected/Test'));
 

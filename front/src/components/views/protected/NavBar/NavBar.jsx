@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './NavBar.sass';
 
 //Import logo and icons
-import logo from '../../../../shared/img/logoAdoptame.png';
+
 import { Icon } from '@mdi/react';
 import { mdiChat } from '@mdi/js';
 import { mdiAccountCircle } from '@mdi/js';
@@ -21,7 +21,7 @@ const NavBar = () => {
         <p className="navtxt">Usuario</p>
       </Link>
       <Link to="/swipe">
-        <img src={logo} alt="swipe" className="navimg icon" />
+        {/* <img src={logo} alt="swipe" className="navimg icon" /> */}
         <p className="navtxt">Swipe</p>
       </Link>
       <Link to="/chat">
