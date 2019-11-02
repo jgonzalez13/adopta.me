@@ -29,24 +29,16 @@ function useUser() {
 
   const PrivateRoute = ({ component: Component }) => (
     <Route
-      render={props =>
-        state.authed === true ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
-        )
+      render={() =>
+        state.authed === true ? <Component /> : <Redirect to="/" />
       }
     />
   );
 
   const PublicRoute = ({ component: Component }) => (
     <Route
-      render={props =>
-        state.authed === false ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to="/roles" />
-        )
+      render={() =>
+        state.authed === false ? <Component /> : <Redirect to="/roles" />
       }
     />
   );
