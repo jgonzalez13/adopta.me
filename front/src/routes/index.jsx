@@ -16,6 +16,12 @@ const ChatList = lazy(() =>
   import('../components/views/protected/ChatList/ChatList')
 );
 
+const Chat = lazy(() => import('../components/views/protected/Chat/Chat'));
+
+const CardSwipe = lazy(() =>
+  import('../components/views/protected/CardSwipe/CardSwipe')
+);
+
 const AppRoutes = () => {
   let user = User.useContainer();
   return (
@@ -26,6 +32,8 @@ const AppRoutes = () => {
           <user.PublicRoute path="/" component={HomeView} exact />
           <user.PrivateRoute path="/roles" component={TestView} exact />
           <user.PrivateRoute path="/chat" component={ChatList} exact />
+          <user.PrivateRoute path="/chat/:id" component={Chat} exact />
+          <user.PrivateRoute path="/swipe" component={CardSwipe} exact />
         </Switch>
       </BrowserRouter>
     </Suspense>
