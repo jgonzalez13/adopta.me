@@ -13,7 +13,7 @@ import Tab from 'react-bootstrap/Tab';
 //Styles
 import './ChatList.sass';
 
-const ChatList = () => {
+const ChatList = props => {
   const [key, setKey] = useState('home');
 
   return (
@@ -22,9 +22,10 @@ const ChatList = () => {
         id="controlled-tab-example"
         activeKey={key}
         onSelect={k => setKey(k)}
+        className="bold"
       >
         <Tab eventKey="home" title="Adoptar">
-          <Container className="d-flex justify-content-center align-items-center pt-5 chat-element-container">
+          <Container className="d-flex justify-content-center align-items-center pt-3 chat-element-container containerChange">
             <Row className="chat-row">
               <Col xs={12} sm={12}>
                 <ChatCard />
@@ -63,7 +64,7 @@ const ChatList = () => {
           </Container>
         </Tab>
         <Tab eventKey="profile" title="Interesados">
-          <Container className="d-flex justify-content-center align-items-center pt-5 chat-element-container">
+          <Container className="d-flex justify-content-center align-items-center pt-3 chat-element-container containerChange">
             <Row className="chat-row">
               <Col xs={12} sm={12}>
                 <ChatCard />

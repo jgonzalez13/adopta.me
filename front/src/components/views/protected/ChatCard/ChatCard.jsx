@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import './ChatCard.sass';
+//Bootstrap components
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
+
+//Styles
+import './ChatCard.sass';
 import placeholderMascota from './img/placeholderMascota.png';
 
-const ChatCard = () => {
+const ChatCard = props => {
   const [count, setCount] = useState(0);
+  let history = useHistory();
+  let chatId = 15;
 
   useEffect(() => {
     console.log(`You've clicked ${count} times`);
@@ -16,7 +22,10 @@ const ChatCard = () => {
     <Card
       border="success"
       className="mb-3 d-flex flex-row px-4  py-2 chat-card"
-      onClick={() => setCount(count + 1)}
+      onClick={() => {
+        setCount(count + 1);
+        history.push(`/chat/${chatId}`);
+      }}
     >
       <Image
         src={placeholderMascota}
