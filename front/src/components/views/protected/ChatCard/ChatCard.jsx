@@ -4,8 +4,7 @@ import Card from 'react-bootstrap/Card';
 const ChatCard = () => {
   return (
     <div>
-      <Card border="success" style={{ width: '18rem' }}>
-        <Card.Header>Header</Card.Header>
+      <Card border="success">
         <Card.Body>
           <Card.Title>Success Card Title</Card.Title>
           <Card.Text>

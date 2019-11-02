@@ -43,11 +43,7 @@ function useUser() {
   const PublicRoute = ({ component: Component }) => (
     <Route
       render={() =>
-        state.authentication === false ? (
-          <Component />
-        ) : (
-          <Redirect to="/roles" />
-        )
+        state.authentication === false ? <Component /> : <Redirect to="/chat" />
       }
     />
   );

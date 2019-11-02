@@ -21,7 +21,7 @@ const AppRoutes = () => {
   return (
     <Suspense fallback={<div>Cargando... </div>}>
       <BrowserRouter>
-        {user.state.authed ? <NavBar /> : null}
+        {user.state.authentication ? <NavBar /> : null}
         <Switch>
           <user.PublicRoute path="/" component={HomeView} exact />
           <user.PrivateRoute path="/roles" component={TestView} exact />
