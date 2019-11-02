@@ -6,7 +6,7 @@ const initialState = {
   emai: '',
   name: '',
   address: '',
-  authed: false,
+  authed: true,
   token: '',
   photography: ''
 };
