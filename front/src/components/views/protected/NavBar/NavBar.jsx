@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './NavBar.sass';
 
 //Import logo and icons
-import logo from '../../../../shared/img/logoAdoptame.png';
+// import logo from '../../../../shared/img/logoAdoptame.png';
 import { Icon } from '@mdi/react';
 import { mdiChat, mdiAccountCircle, mdiPaw } from '@mdi/js';
 

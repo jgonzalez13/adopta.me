@@ -16,15 +16,45 @@ const ChatList = () => {
   const [key, setKey] = useState('home');
 
   return (
-    <>
+    <div className="chat-container">
       <Tabs
         id="controlled-tab-example"
         activeKey={key}
         onSelect={k => setKey(k)}
       >
         <Tab eventKey="home" title="Adoptar">
-          <Container className="d-flex justify-content-center align-items-center pt-5">
-            <Row>
+          <Container className="d-flex justify-content-center align-items-center pt-5 chat-element-container">
+            <Row className="chat-row">
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
               <Col xs={12} sm={12}>
                 <ChatCard />
               </Col>
@@ -41,7 +71,7 @@ const ChatList = () => {
           </Container>
         </Tab>
       </Tabs>
-    </>
+    </div>
   );
 };
 
