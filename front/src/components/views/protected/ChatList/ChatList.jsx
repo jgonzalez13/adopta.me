@@ -32,8 +32,12 @@ const ChatList = () => {
           </Container>
         </Tab>
         <Tab eventKey="profile" title="Interesados">
-          <Container>
-            <ChatCard />
+          <Container className="d-flex justify-content-center align-items-center pt-5">
+            <Row>
+              <Col xs={12} sm={12}>
+                <ChatCard />
+              </Col>
+            </Row>
           </Container>
         </Tab>
       </Tabs>
