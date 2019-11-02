@@ -25,7 +25,7 @@ const ChatList = props => {
         className="bold"
       >
         <Tab eventKey="home" title="Adoptar">
-          <Container className="d-flex justify-content-center align-items-center pt-3 chat-element-container containerChange">
+          <Container className="d-flex justify-content-center align-items-center pt-3">
             <Row className="chat-row">
               <Col xs={12} sm={12}>
                 <ChatCard />
@@ -64,7 +64,7 @@ const ChatList = props => {
           </Container>
         </Tab>
         <Tab eventKey="profile" title="Interesados">
-          <Container className="d-flex justify-content-center align-items-center pt-3 chat-element-container containerChange">
+          <Container className="d-flex justify-content-center align-items-center pt-3">
             <Row className="chat-row">
               <Col xs={12} sm={12}>
                 <ChatCard />
