@@ -17,8 +17,8 @@ const Spinner = ({ size, message }) => (
     </div>{' '}
     {message === 1 ? (
       <div className="text">
-        <p>No se Encontraron </p>
-        <p>Perritos en tu Zona</p>
+        <p>No se encontraron </p>
+        <p>perritos en tu zona</p>
       </div>
     ) : null}
   </div>

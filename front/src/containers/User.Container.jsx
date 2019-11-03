@@ -24,6 +24,11 @@ function useUser() {
     />
   );
 
+  const onLogOut = () => {
+    setAuthentication(false);
+    localStorage.removeItem('token');
+  };
+
   useEffect(() => {
     if (token !== '') {
       localStorage.setItem('token', token);
@@ -47,7 +52,8 @@ function useUser() {
     setToken,
     setLat,
     PrivateRoute,
-    PublicRoute
+    PublicRoute,
+    onLogOut
   };
 }
 
