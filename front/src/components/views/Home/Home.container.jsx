@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { mdiArrowLeftCircle } from '@mdi/js';
+import { mdiArrowLeftCircle, mdiAccountPlus, mdiLogin } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import FormLogin from '../FormLogin.component';
 
@@ -11,13 +11,13 @@ const Home = () => {
       {loginActive ? (
         <button
           type="submit"
-          className="btn btn--white btn--animated max-width-100 animateToLeft"
+          className="btn btn--pink btn--animated max-width-100 animateToLeft"
         >
           <Icon
             onClick={() => setLoginActive(false)}
             path={mdiArrowLeftCircle}
             size={1}
-            color="#fc6476"
+            color="#fff"
           />
         </button>
       ) : null}
@@ -33,9 +33,23 @@ const Home = () => {
               onClick={() => setLoginActive(true)}
               className="btn btn--white btn--animated margin-bottom-30"
             >
-              Iniciar sesion
+              <Icon
+                className="margin-right-15px"
+                onClick={() => setLoginActive(false)}
+                path={mdiLogin}
+                size={1}
+                color="#fc6476"
+              />
+              Iniciar sesión
             </button>
             <button className="btn btn--white btn--animated">
+              <Icon
+                className="margin-right-15px"
+                onClick={() => setLoginActive(false)}
+                path={mdiAccountPlus}
+                size={1}
+                color="#fc6476"
+              />
               Registrarse
             </button>
           </div>

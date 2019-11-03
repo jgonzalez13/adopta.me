@@ -12,11 +12,13 @@ const FormLogin = () => {
   const fetchData = useApi();
 
   const onSubmit = async values => {
-    console.log(values);
-    user.dispatch({ type: 'onLogin' });
-    const response = await fetchData('POST', '/auth', JSON.stringify(values));
-
-    console.log(response);
+    try {
+      const response = await fetchData('POST', '/auth', values);
+      user.setToken(response.data.token);
+      user.setAuthentication(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -46,12 +48,12 @@ const FormLogin = () => {
         {errors.username && errors.username.message}
       </div>
       <div className="d-flex align-item-center">
-        <button type="submit" className="btn btn--pink btn--animated">
+        <button type="submit" className="btn btn--white btn--animated">
           <Icon
             className="margin-right-15px"
             path={mdiLoginVariant}
             size={1}
-            color="#fff"
+            color="#fc6476"
           />
           Ingresar
         </button>

@@ -10,8 +10,6 @@ import NavBar from '../components/views/protected/NavBar/NavBar';
 
 const HomeView = lazy(() => import('../components/views/Home/Home.container'));
 
-const TestView = lazy(() => import('../components/views/protected/Test'));
-
 const ChatList = lazy(() =>
   import('../components/views/protected/ChatList/ChatList')
 );
@@ -19,7 +17,7 @@ const ChatList = lazy(() =>
 const Chat = lazy(() => import('../components/views/protected/Chat/Chat'));
 
 const CardSwipe = lazy(() =>
-  import('../components/views/protected/CardSwipe/CardSwipe')
+  import('../components/views/protected/Swipe/Swipe.component')
 );
 
 const AppRoutes = () => {
@@ -27,10 +25,9 @@ const AppRoutes = () => {
   return (
     <Suspense fallback={<div>Cargando... </div>}>
       <BrowserRouter>
-        {user.state.authentication ? <NavBar /> : null}
+        {user.authentication ? <NavBar /> : null}
         <Switch>
-          <user.PublicRoute path="/" component={HomeView} exact />
-          <user.PrivateRoute path="/roles" component={TestView} exact />
+          <user.PublicRoute path="/" component={HomeView} exact />∫
           <user.PrivateRoute path="/chat" component={ChatList} exact />
           <user.PrivateRoute path="/chat/:id" component={Chat} exact />
           <user.PrivateRoute path="/swipe" component={CardSwipe} exact />

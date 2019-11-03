@@ -24,11 +24,11 @@ function useApi() {
           method,
           url,
           data: data || null,
-          headers: { token: user.state.token }
+          headers: { token: user.token }
         });
       } catch (error) {
         if (error.status === 401) {
-          user.dispatch({ type: 'onLogout' });
+          user.setAuthentication(false);
           return;
         } else {
           return;
