@@ -48,7 +48,7 @@ const FormLogin = () => {
         {errors.username && errors.username.message}
       </div>
       <div className="d-flex align-item-center">
-        <button type="submit" className="btn btn--white btn--animated">
+        <button type="submit" className="btnX btnX--white btnX--animated">
           <Icon
             className="margin-right-15px"
             path={mdiLoginVariant}
