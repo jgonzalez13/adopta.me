@@ -24,7 +24,7 @@ function useApi() {
           method,
           url,
           data: data || null,
-          headers: { token: user.token }
+          headers: { Authorization: 'Bearer ' + user.token }
         });
       } catch (error) {
         if (error.status === 401) {

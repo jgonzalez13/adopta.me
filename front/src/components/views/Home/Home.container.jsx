@@ -10,15 +10,10 @@ const Home = () => {
     <div className="background-login">
       {loginActive ? (
         <button
-          type="submit"
+          onClick={() => setLoginActive(false)}
           className="btn btn--pink btn--animated max-width-100 animateToLeft"
         >
-          <Icon
-            onClick={() => setLoginActive(false)}
-            path={mdiArrowLeftCircle}
-            size={1}
-            color="#fff"
-          />
+          <Icon path={mdiArrowLeftCircle} size={1} color="#fff" />
         </button>
       ) : null}
       <div className="background-login_icono">
@@ -30,6 +25,7 @@ const Home = () => {
         ) : (
           <div className="btns-container">
             <button
+              type="submit"
               onClick={() => setLoginActive(true)}
               className="btn btn--white btn--animated margin-bottom-30"
             >
