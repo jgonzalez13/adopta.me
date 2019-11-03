@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cd front && npm install && npm run build",
-    "start": "cd front && serve -s build"
+    "start": "cd front && echo $port && npx serve -s build"
   },
   "repository": {
     "type": "git",
