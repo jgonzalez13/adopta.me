@@ -55,6 +55,8 @@ const Swipe = () => {
                 img={item.img}
                 name={item.name}
                 distance={item.distance}
+                age={item.age}
+                description={item.description}
                 like={like}
                 dislike={dislike}
               />

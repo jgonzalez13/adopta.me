@@ -4,12 +4,15 @@ import { Card } from 'react-swipeable-cards';
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
+import PetModal from './PetModal.component'
+
 //Import styles
 import './CardSwipe.sass';
 
 //Import Icon
 import { Icon } from '@mdi/react';
 import { mdiInformationOutline } from '@mdi/js';
+
 
 const Cards = props => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -23,17 +26,13 @@ const Cards = props => {
           backgroundSize: 'cover'
         }}
       >
-        <div
-          className="fixed-bottom card-info-container row"
-          onClick={() => setModalShow(true)}
-        >
+        <div className="fixed-bottom card-info-container row">
           <div className="col">
-            <div className="card-title">{props.name}</div>A {props.distance}km
-            de distancia
+            <div className="card-title">{props.name}</div>A {props.distance}km de distancia
           </div>
           <div className="col col-lg-3">
             <Icon
-              onClick={() => console.log('holaa')}
+              onClick={() => setModalShow(true)}
               path={mdiInformationOutline}
               size={2.5}
               color="#000"
@@ -61,6 +60,20 @@ const Cards = props => {
           </Col>
         </Row>
       </Container>
+
+      <PetModal
+        key={props.id}
+        img={props.img}
+        name={props.name}
+        distance={props.distance}
+        age={props.age}
+        description={props.description}
+        like={props.like}
+        dislike={props.dislike}
+        
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </>
   );
 };
