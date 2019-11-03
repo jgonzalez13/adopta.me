@@ -45,7 +45,7 @@ const Swipe = () => {
 
   return (
     <div className="swipe">
-      {data.length < 0 ? (
+      {data.length === 0 ? (
         <Spinner size={130} />
       ) : (
         <CardWrapper>
