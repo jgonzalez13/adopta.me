@@ -4,6 +4,7 @@ import { CardWrapper } from 'react-swipeable-cards';
 import Cards from './Card.component';
 import User from '../../../../containers/User.Container';
 
+import Spinner from '../../../../shared/Spinner.component';
 import useApi from '../../../../services/useApi';
 
 const Swipe = () => {
@@ -42,20 +43,26 @@ const Swipe = () => {
   }
 
   return (
-    <CardWrapper>
-      {data.map(item => {
-        return (
-          <Cards
-            key={item.id}
-            img={item.img}
-            name={item.name}
-            distance={item.distance}
-            like={like}
-            dislike={dislike}
-          />
-        );
-      })}
-    </CardWrapper>
+    <>
+      {data.length < 0 ? (
+        <Spinner size={130} />
+      ) : (
+        <CardWrapper>
+          {data.map(item => {
+            return (
+              <Cards
+                key={item.id}
+                img={item.img}
+                name={item.name}
+                distance={item.distance}
+                like={like}
+                dislike={dislike}
+              />
+            );
+          })}
+        </CardWrapper>
+      )}
+    </>
   );
 };
 

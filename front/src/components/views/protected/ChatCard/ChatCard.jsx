@@ -13,11 +13,6 @@ const ChatCard = props => {
   const [count, setCount] = useState(0);
   let history = useHistory();
   let chatId = 15;
-
-  useEffect(() => {
-    console.log(`You've clicked ${count} times`);
-  });
-
   return (
     <Card
       border="success"

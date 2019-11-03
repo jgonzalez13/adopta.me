@@ -16,8 +16,6 @@ function useUser() {
     />
   );
 
-  console.log(authentication);
-
   const PublicRoute = ({ component: Component }) => (
     <Route
       render={props =>

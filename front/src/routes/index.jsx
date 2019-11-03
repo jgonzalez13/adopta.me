@@ -8,6 +8,8 @@ import User from '../containers/User.Container';
 // ? Components
 import NavBar from '../components/views/protected/NavBar/NavBar';
 
+import Spinner from '../shared/Spinner.component';
+
 const HomeView = lazy(() => import('../components/views/Home/Home.container'));
 
 const ChatList = lazy(() =>
@@ -23,7 +25,7 @@ const CardSwipe = lazy(() =>
 const AppRoutes = () => {
   let user = User.useContainer();
   return (
-    <Suspense fallback={<div>Cargando... </div>}>
+    <Suspense fallback={<Spinner size={130} />}>
       <BrowserRouter>
         {user.authentication ? <NavBar /> : null}
         <Switch>
