@@ -8,9 +8,11 @@ Pruebe la aplicación [aquí](https://adoptamewow.herokuapp.com)
 
 # Usuarios :O
 
-Correo: ejemplo0@adopta.me  
-Pass: ejemplo0
+(usuario con mascotas registradas) 
+Correo: lomito@adopta.me  
+Pass: 123456
 
+(Dar likes o rechzar) 
 Correo: ejemplo1@adopta.me  
 Pass: ejemplo1
 
