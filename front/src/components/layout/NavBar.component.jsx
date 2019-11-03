@@ -20,7 +20,7 @@ const NavBar = () => {
       </Link>
       <Link to="/swipe">
         <Icon path={mdiPaw} size={1.5} color="#fff" className="icon" />
-        <p className="navtxt">Swipe</p>
+        <p className="navtxt">Adopta</p>
       </Link>
       <Link to="/chat">
         <Icon path={mdiChat} size={1.5} color="#fff" className="icon" />

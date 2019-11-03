@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+import useApi from '../../../../services/useApi';
+
 import { CardWrapper } from 'react-swipeable-cards';
 import Cards from './Card.component';
 import User from '../../../../containers/User.Container';
 
 import Spinner from '../../../../shared/Spinner.component';
-import useApi from '../../../../services/useApi';
 
 const Swipe = () => {
   const [data, setData] = useState([]);
@@ -35,16 +36,22 @@ const Swipe = () => {
     }
   }, [fetchData, user]);
 
-  function dislike() {
-    let pet = [...data];
-    pet.shift();
-    setData(pet);
+  async function dislike() {
+    try {
+      let pet = [...data];
+      pet.shift();
+      setData(pet);
+      await fetchData('POST', '/swipes', { liked: false, petId: data[0].id });
+    } catch (error) {}
   }
 
-  function like() {
-    let pet = [...data];
-    pet.shift();
-    setData(pet);
+  async function like() {
+    try {
+      let pet = [...data];
+      pet.shift();
+      setData(pet);
+      await fetchData('POST', '/swipes', { liked: true, petId: data[0].id });
+    } catch (error) {}
   }
 
   return (
@@ -54,10 +61,11 @@ const Swipe = () => {
       ) : (
         <CardWrapper>
           {data.map((item, i) => {
+            console.log(item);
             return (
               <Cards
                 key={item.id}
-                img={require(`../../../../assets/animals/image-2.jpg`)}
+                img={require(`../../../../assets/animals/image-${item.typeId}.jpg`)}
                 name={item.name}
                 distance={item.distance}
                 age={item.age}
