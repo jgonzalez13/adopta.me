@@ -9,7 +9,7 @@ import { mdiChat, mdiAccountCircle, mdiPaw } from '@mdi/js';
 const NavBar = () => {
   return (
     <nav className="navbar-b">
-      <Link to="/">
+      <Link to="/profile">
         <Icon
           path={mdiAccountCircle}
           size={1.5}
@@ -19,7 +19,6 @@ const NavBar = () => {
         <p className="navtxt">Usuario</p>
       </Link>
       <Link to="/swipe">
-        {/* <img src={logo} alt="swipe" className="navimg icon" /> */}
         <Icon path={mdiPaw} size={1.5} color="#fff" className="icon" />
         <p className="navtxt">Swipe</p>
       </Link>
