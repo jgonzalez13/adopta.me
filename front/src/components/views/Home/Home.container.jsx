@@ -11,7 +11,7 @@ const Home = () => {
       {loginActive ? (
         <button
           onClick={() => setLoginActive(false)}
-          className="btn btn--pink btn--animated max-width-100 animateToLeft"
+          className="btnX btnX--pink btnX--animated max-width-100 animateToLeft"
         >
           <Icon path={mdiArrowLeftCircle} size={1} color="#fff" />
         </button>
@@ -23,11 +23,11 @@ const Home = () => {
         {loginActive ? (
           <FormLogin />
         ) : (
-          <div className="btns-container">
+          <div className="btnXs-container">
             <button
               type="submit"
               onClick={() => setLoginActive(true)}
-              className="btn btn--white btn--animated margin-bottom-30"
+              className="btnX btnX--white btnX--animated margin-bottom-30"
             >
               <Icon
                 className="margin-right-15px"
@@ -38,7 +38,7 @@ const Home = () => {
               />
               Iniciar sesión
             </button>
-            <button className="btn btn--white btn--animated">
+            <button className="btnX btnX--white btnX--animated">
               <Icon
                 className="margin-right-15px"
                 onClick={() => setLoginActive(false)}
