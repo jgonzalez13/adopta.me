@@ -21,7 +21,7 @@ const Chat = lazy(() =>
 );
 
 const CardSwipe = lazy(() =>
-  import('../components/views/protected/Swipe/Swipe.component')
+  import('../components/views/protected/Swipe/Swipe.container')
 );
 
 const AppRoutes = () => {

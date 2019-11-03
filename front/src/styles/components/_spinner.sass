@@ -1,11 +1,14 @@
-.papaSpinner
+.spinner
     height: 100vh
     display: flex
     justify-content: center
     align-items: center
+    flex-direction: column
+
+.papaSpinner
     background-image: url('../../assets/logoAdoptame.png')
     background-repeat: no-repeat
-    background-size: 20%
+    background-size: 50%
     background-position: center
 
 #loader 
@@ -38,6 +41,13 @@
         animation-duration: 2s
         border-top-color: $color-main
         transform: rotate(240deg)
+
+.text
+    margin-top: 40px
+
+    p 
+        &:first-child
+            margin-bottom: 5px !important
 
 @keyframes spin 
     0% 
