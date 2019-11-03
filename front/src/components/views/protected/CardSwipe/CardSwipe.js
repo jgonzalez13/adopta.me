@@ -10,51 +10,37 @@ import img3 from './img/gato.jpg';
 import Cards from './Cards';
 
 const CardSwipe = () => {
-  
-const [data, setData] = React.useState({
-  mascotas: [
-      {
-      id: 1,
-      img: img1,
-      name: 'Firulais',
-      distance: 23
-      },
-      {
-      id: 2,
-      img: img2,
-      name: 'Conejo',
-      distance: 45
-      },
-      {
-      id: 3,
-      img: img3,
-      name: 'Toncho',
-      distance: 3
-      }
-  ]
-}
-)
+  const [data, setData] = React.useState();
 
   function dislike() {
-    console.log('Diste dislike')
-    let pet = {mascotas:[...data.mascotas]}
+    console.log('Diste dislike');
+    let pet = { mascotas: [...data.mascotas] };
     pet.mascotas.shift();
-    setData(pet)
+    setData(pet);
   }
 
   function like() {
-      console.log('Diste like')
-      let pet = {mascotas:[...data.mascotas]}
-      pet.mascotas.shift();
-      setData(pet)
+    console.log('Diste like');
+    let pet = { mascotas: [...data.mascotas] };
+    pet.mascotas.shift();
+    setData(pet);
   }
   return (
-      <CardWrapper>
-        {data.mascotas.map(d => {
-           return <Cards key={d.id} img={d.img} name={d.name} distance={d.distance} like={like} dislike={dislike}/>
-        })}
-      </CardWrapper>
-  )
-}
+    <CardWrapper>
+      {data.mascotas.map(d => {
+        return (
+          <Cards
+            key={d.id}
+            img={d.img}
+            name={d.name}
+            distance={d.distance}
+            like={like}
+            dislike={dislike}
+          />
+        );
+      })}
+    </CardWrapper>
+  );
+};
 
 export default CardSwipe;
