@@ -1,0 +1,52 @@
+//linear-gradient(#fc6476 0%, #fff 65%, #fff 100%)
+.background-login
+    background-image: url("../../assets/dog.png"), linear-gradient(#fff 0%, #fff 45%, #fc6476 100%)
+    background-size: 100%
+    background-position: 0% 40%
+    background-repeat: no-repeat
+    height: 100vh
+    width: 100vw
+    animation: upOpacity .5s ease-out 
+    animation-fill-mode: backwards
+
+    &-banner
+        position: absolute
+        bottom: 0
+        left: 0
+        height: 200px
+        background-size: cover
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-bottom: 40px
+    
+    &_icono
+        height: 100px
+        width: 100%
+        display: flex
+        justify-content: center
+        position: absolute
+        top: 0
+        left: 0
+        margin-top: 20px
+
+        .logo 
+            background-image: url("../../assets/logoAdoptame.png")
+            height: 110px
+            width: 95px
+            background-repeat: no-repeat
+            background-size: cover
+            animation: moveInTop .5s ease-out .75s
+            animation-fill-mode: backwards
+
+.btns-container
+    display: flex 
+    flex-direction: column
+    align-items: center
+
+.formConatiner
+    animation: moveInTop .5s ease-out .02s
+    animation-fill-mode: backwards
+
+    
