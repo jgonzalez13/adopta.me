@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.sass';
+import './navBar.sass';
 
 //Import logo and icons
 import { Icon } from '@mdi/react';

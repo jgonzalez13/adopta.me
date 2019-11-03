@@ -6,7 +6,7 @@ import { Switch } from 'react-router-dom';
 import User from '../containers/User.Container';
 
 // ? Components
-import NavBar from '../components/views/protected/NavBar/NavBar.container';
+import NavBar from '../components/layout/NavBar.component';
 
 import Spinner from '../shared/Spinner.component';
 
