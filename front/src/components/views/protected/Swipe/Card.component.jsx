@@ -30,11 +30,11 @@ const Cards = props => {
         }}
       >
         <div className="fixed-bottom card-info-container row">
-          <div className="col">
+          <div className="col margin-left-13">
             <div className="card-title color-gray">
               <b>{props.name.toUpperCase()}</b>
             </div>
-            A {Math.floor(props.distance)} km
+            A {Math.floor(props.distance / 1000)} km
           </div>
           <div className="col col-lg-3 justify-content-flex-end">
             <Icon
