@@ -40,7 +40,7 @@ class SendBirdProvider {
     return new Promise((res, rej) => {
       const sbIns = SendBird.getInstance();
       sbIns.OpenChannel.getChannel(
-        'sendbird_open_channel_59505_d18c02f2a2bce6cd2fdd5a052ad073b5c5e21395',
+        'sendbird_open_channel_59505_d18c02f2a2bce6cd2fdd5a052ad073b5c5e213934',
         (channel, error) => {
           if (error) {
             console.error('Error when you tried to enter to channel', error);
