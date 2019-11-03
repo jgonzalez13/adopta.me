@@ -4,36 +4,36 @@ Adopta.me es una aplicación web basada en mobile first que busca solucionar el 
 
 # Prueba la app :D
 
-Pruebe la aplicación [aquí](https://google.com)
+Pruebe la aplicación [aquí](https://adoptamewow.herokuapp.com)
 
 # Usuarios :O
 
-Correo: ejemplo0@adopta.me
+Correo: ejemplo0@adopta.me  
 Pass: ejemplo0
 
-Correo: ejemplo1@adopta.me
+Correo: ejemplo1@adopta.me  
 Pass: ejemplo1
 
-Correo: ejemplo2@adopta.me
+Correo: ejemplo2@adopta.me  
 Pass: ejemplo2
 
-Correo: ejemplo3@adopta.me
+Correo: ejemplo3@adopta.me  
 Pass: ejemplo3
 
-Correo: ejemplo4@adopta.me
+Correo: ejemplo4@adopta.me  
 Pass: ejemplo4
 
-Correo: ejemplo5@adopta.me
+Correo: ejemplo5@adopta.me  
 Pass: ejemplo5
 
-Correo: ejemplo6@adopta.me
+Correo: ejemplo6@adopta.me  
 Pass: ejemplo6
 
-Correo: ejemplo7@adopta.me
+Correo: ejemplo7@adopta.me  
 Pass: ejemplo7
 
-Correo: ejemplo8@adopta.me
+Correo: ejemplo8@adopta.me  
 Pass: ejemplo8
 
-Correo: ejemplo9@adopta.me
+Correo: ejemplo9@adopta.me  
 Pass: ejemplo9
