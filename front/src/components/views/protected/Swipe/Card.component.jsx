@@ -2,14 +2,18 @@ import React from 'react';
 
 import { Card } from 'react-swipeable-cards';
 
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 //Import styles
 import './CardSwipe.sass';
 
 //Import Icon
 import { Icon } from '@mdi/react';
-import { mdiInformationOutline } from '@mdi/js';
+import {
+  mdiInformationOutline,
+  mdiCardsHeart,
+  mdiCloseCircleOutline
+} from '@mdi/js';
 
 const Cards = props => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -28,15 +32,17 @@ const Cards = props => {
           onClick={() => setModalShow(true)}
         >
           <div className="col">
-            <div className="card-title">{props.name}</div>A {props.distance}km
-            de distancia
+            <div className="card-title color-gray">
+              <b>{props.name.toUpperCase()}</b>
+            </div>
+            A {Math.floor(props.distance)} km
           </div>
-          <div className="col col-lg-3">
+          <div className="col col-lg-3 justify-content-flex-end">
             <Icon
               onClick={() => console.log('holaa')}
               path={mdiInformationOutline}
               size={2.5}
-              color="#000"
+              color="#41ACD8"
               className="icon"
             />
           </div>
@@ -46,18 +52,21 @@ const Cards = props => {
       <Container className="container-buttons">
         <Row>
           <Col className="col col-lg-6">
-            <Button
-              type="button"
-              className="choose-buttons"
+            <button
+              className="choose-buttons border-color-red"
               onClick={props.dislike}
-            ></Button>
+            >
+              <Icon path={mdiCloseCircleOutline} size={2} color="#ff6961" />
+            </button>
           </Col>
           <Col className="col col-lg-6">
-            <Button
+            <button
               type="button"
-              className="choose-buttons"
+              className="choose-buttons border-color-green"
               onClick={props.like}
-            ></Button>
+            >
+              <Icon path={mdiCardsHeart} size={2} color="#77dd77" />
+            </button>
           </Col>
         </Row>
       </Container>
