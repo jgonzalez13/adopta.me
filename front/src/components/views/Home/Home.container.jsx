@@ -11,7 +11,7 @@ const Home = () => {
       {loginActive ? (
         <button
           onClick={() => setLoginActive(false)}
-          className="btnX btnX--pink btnX--animated max-width-100 animateToLeft"
+          className="btnX btnX--pink btnX--animated max-width-100 animateToLeft btn-back"
         >
           <Icon path={mdiArrowLeftCircle} size={1} color="#fff" />
         </button>

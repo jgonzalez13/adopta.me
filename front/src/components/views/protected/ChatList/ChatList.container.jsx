@@ -36,30 +36,6 @@ const ChatList = props => {
               <Col xs={12} sm={12}>
                 <ChatCard />
               </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
             </Row>
           </Container>
         </Tab>
@@ -69,33 +45,7 @@ const ChatList = props => {
               <Col xs={12} sm={12}>
                 <ChatCard />
               </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
-              <Col xs={12} sm={12}>
-                <ChatCard />
-              </Col>
+
               <Col xs={12} sm={12}>
                 <ChatCard />
               </Col>

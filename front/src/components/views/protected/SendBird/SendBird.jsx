@@ -1,58 +1,66 @@
 import * as SendBird from 'sendbird';
-import { store } from '../index';
+// import { store } from '../index';
 // * Actions
-import {
-  saveDataUserSendbird,
-  saveUsersPublic,
-  saveListChannel,
-  updateMessage,
-  userSendMessage
-} from '../shared/redux/actions/user.action';
+// import {
+//   saveDataUserSendbird,
+//   saveUsersPublic,
+//   saveListChannel,
+//   updateMessage,
+//   userSendMessage
+// } from '../shared/redux/actions/user.action';
 
-class Sendbird {
+class SendBirdProvider {
   constructor() {
-    this.sb = new SendBird({ appId: '97E98951-669A-4DF6-BDEE-E50131689317' });
+    this.sb = new SendBird({ appId: '011AEB3D-EB9D-4296-B166-6B27FEAA4596' });
     this.dataUser = {};
     this.currentChannel = {};
   }
 
   connect(user) {
-    console.log(this.sb);
-    this.sb.connect(user, (user, error) => {
-      if (error) {
-        console.error('Error connect', error);
-      } else {
-        this.dataUser = user;
-        store.dispatch(saveDataUserSendbird(user));
-        this.getUsersPublic();
-        this.enterChannel();
-        this.showListChannels();
-      }
+    return new Promise((res, rej) => {
+      console.log(this.sb);
+      this.sb.connect(user, (user, error) => {
+        if (error) {
+          console.error('Error connect', error);
+          rej(false);
+        } else {
+          this.dataUser = user;
+          // store.dispatch(saveDataUserSendbird(user));
+          this.getUsersPublic();
+          this.showListChannels();
+          let response = this.enterChannel();
+          console.log(response);
+          res(response);
+        }
+      });
     });
   }
 
-  enterChannel() {
-    const sbIns = SendBird.getInstance();
-    sbIns.OpenChannel.getChannel(
-      'sendbird_open_channel_53955_e069e98272e417e87c4f4997cf5ce02220695397',
-      (channel, error) => {
-        if (error) {
-          console.error('Error when you tried to enter to channel', error);
-        } else {
-          console.log('Entraste', channel);
-          channel.enter((user, error) => {
-            if (error) {
-              console.error('error', error);
-            } else {
-              console.log('Register user :', user);
-            }
-          });
-          this.currentChannel = channel;
-          this.addHandlerChannel();
-          this.loadPreviousMessages();
+  async enterChannel() {
+    return new Promise((res, rej) => {
+      const sbIns = SendBird.getInstance();
+      sbIns.OpenChannel.getChannel(
+        'sendbird_open_channel_59505_d18c02f2a2bce6cd2fdd5a052ad073b5c5e21395',
+        (channel, error) => {
+          if (error) {
+            console.error('Error when you tried to enter to channel', error);
+          } else {
+            console.log('Entraste', channel);
+            res(channel);
+            channel.enter((user, error) => {
+              if (error) {
+                console.error('error', error);
+              } else {
+                console.log('Register user :', user);
+              }
+            });
+            this.currentChannel = channel;
+            this.addHandlerChannel();
+            this.loadPreviousMessages();
+          }
         }
-      }
-    );
+      );
+    });
   }
 
   newChannelPublic() {
@@ -81,7 +89,7 @@ class Sendbird {
       if (error) {
         console.error('List error', error);
       } else {
-        store.dispatch(saveListChannel(channels));
+        // store.dispatch(saveListChannel(channels));
       }
     });
   }
@@ -93,7 +101,7 @@ class Sendbird {
       if (error) {
         console.error('List users error', error);
       } else {
-        store.dispatch(saveUsersPublic(users));
+        // store.dispatch(saveUsersPublic(users));
         console.log('users', users);
       }
     });
@@ -104,45 +112,51 @@ class Sendbird {
     const params = new sbIns.UserMessageParams();
 
     params.message = text;
-
+    console.log(this.currentChannel);
     this.currentChannel.sendUserMessage(params, (message, error) => {
       if (error) {
         console.error('Error when send message', error);
+        return false;
       } else {
-        store.dispatch(userSendMessage(message));
+        console.log('SE MANDÓ EL MENSAJE');
+        return true;
       }
     });
   }
 
   addHandlerChannel() {
-    const sbIns = SendBird.getInstance();
-    const ChannelHandler = new sbIns.ChannelHandler();
+    return new Promise((res, rej) => {
+      const sbIns = SendBird.getInstance();
+      const ChannelHandler = new sbIns.ChannelHandler();
 
-    ChannelHandler.onMessageReceived = (channel, message) => {
-      store.dispatch(userSendMessage(message));
-    };
+      ChannelHandler.onMessageReceived = (channel, message) => {
+        console.log('Mensaje Recibido');
+        res(message);
+      };
 
-    sbIns.addChannelHandler('Public', ChannelHandler);
+      sbIns.addChannelHandler('Public', ChannelHandler);
+    });
   }
 
   loadPreviousMessages() {
-    const messageListQuery = this.currentChannel.createPreviousMessageListQuery();
+    return new Promise((res, rej) => {
+      const messageListQuery = this.currentChannel.createPreviousMessageListQuery();
 
-    messageListQuery.limit = 10;
-    messageListQuery.reverse = true;
+      messageListQuery.limit = 200;
+      messageListQuery.reverse = true;
 
-    messageListQuery.load((messageList, error) => {
-      if (error) {
-        console.error('Error when tried to load previous messages', error);
-      } else {
-        console.log('Lista de mensajes', messageList);
-        const arrayReverse = messageList.reverse();
-        store.dispatch(updateMessage(arrayReverse));
-      }
+      messageListQuery.load((messageList, error) => {
+        if (error) {
+          console.error('Error when tried to load previous messages', error);
+          rej(error);
+        } else {
+          console.log('Lista de mensajes', messageList);
+          const arrayReverse = messageList.reverse();
+          res(arrayReverse);
+        }
+      });
     });
   }
 }
 
-const sb = new Sendbird();
-
-export default sb;
+export default SendBirdProvider;
