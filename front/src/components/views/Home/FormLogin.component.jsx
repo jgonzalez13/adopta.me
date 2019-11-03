@@ -47,7 +47,7 @@ const FormLogin = () => {
         />
         {errors.username && errors.username.message}
       </div>
-      <div className="d-flex align-item-center">
+      <div className="d-flex justify-content-center">
         <button type="submit" className="btnX btnX--white btnX--animated">
           <Icon
             className="margin-right-15px"
