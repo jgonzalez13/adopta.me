@@ -56,6 +56,8 @@ const Swipe = () => {
                 img={require(`../../../../assets/animals/image-2.jpg`)}
                 name={item.name}
                 distance={item.distance}
+                age={item.age}
+                description={item.description}
                 like={like}
                 dislike={dislike}
               />
