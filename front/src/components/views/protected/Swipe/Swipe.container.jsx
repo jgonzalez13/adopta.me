@@ -54,6 +54,12 @@ const Swipe = () => {
     } catch (error) {}
   }
 
+  useEffect(() => {
+    if (data.length === 0) {
+      setNoData(1);
+    }
+  }, [data]);
+
   return (
     <div className="swipe">
       {data.length === 0 ? (
@@ -61,7 +67,6 @@ const Swipe = () => {
       ) : (
         <CardWrapper>
           {data.map((item, i) => {
-            console.log(item);
             return (
               <Cards
                 key={item.id}
