@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 //Components
-import ChatCard from '../ChatCard/ChatCard';
+import ChatCard from '../ChatCard/ChatCard.container';
 
 //Bootstrap components
 import Container from 'react-bootstrap/Container';

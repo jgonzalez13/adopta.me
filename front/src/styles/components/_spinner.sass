@@ -1,0 +1,51 @@
+.papaSpinner
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background-image: url('../../assets/logoAdoptame.png')
+    background-repeat: no-repeat
+    background-size: 20%
+    background-position: center
+
+#loader 
+    $border-width: 1px
+    //$loader-size: 32px
+
+    animation: spin 1.2s ease-in-out infinite
+    border: $border-width solid transparent
+    border-top-color: $color-main
+    border-radius: 100%
+    filter: drop-shadow(0 0 $border-width $color-main)
+    margin: 0 auto
+    position: relative
+    
+    div 
+        animation: spin 1s ease-in-out infinite
+        border: $border-width solid transparent
+        border-radius: 100%
+        bottom: -$border-width
+        left: -$border-width
+        position: absolute
+        right: -$border-width
+        top: -$border-width
+    
+    div:first-child 
+        border-top-color: $color-main
+        transform: rotate(120deg)
+    
+    div:last-child 
+        animation-duration: 2s
+        border-top-color: $color-main
+        transform: rotate(240deg)
+
+@keyframes spin 
+    0% 
+        transform: rotate(0deg)
+    
+    50% 
+        box-shadow: 0 -2px 4px rgba(#fff, .2)
+        opacity: .7
+    
+    100% 
+        transform: rotate(360deg) 

@@ -10,34 +10,36 @@ function useUser() {
 
   const PrivateRoute = ({ component: Component }) => (
     <Route
-      render={() =>
-        authentication === true ? <Component /> : <Redirect to="/" />
+      render={props =>
+        authentication ? <Component {...props} /> : <Redirect to="/" />
       }
     />
   );
 
   const PublicRoute = ({ component: Component }) => (
     <Route
-      render={() =>
-        authentication === false ? <Component /> : <Redirect to="/swipe" />
+      render={props =>
+        !authentication ? <Component {...props} /> : <Redirect to="/swipe" />
       }
     />
   );
 
   useEffect(() => {
-    if (token) {
+    if (token !== '') {
       localStorage.setItem('token', token);
-      console.log(token);
     }
   }, [token]);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
+      setToken(localStorage.getItem('token'));
       setAuthentication(true);
     }
   }, []);
 
   return {
+    lat,
+    lng,
     token,
     authentication,
     setAuthentication,

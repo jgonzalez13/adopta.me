@@ -7,12 +7,11 @@ import Image from 'react-bootstrap/Image';
 
 //Styles
 import './ChatCard.sass';
-import placeholderMascota from './img/placeholderMascota.png';
+import placeholderMascota from '../../../../assets/chatCard/placeholderMascota.png';
 
 const ChatCard = props => {
   let history = useHistory();
   let chatId = 15;
-
   return (
     <Card
       border="success"

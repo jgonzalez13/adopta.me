@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { mdiArrowLeftCircle, mdiAccountPlus, mdiLogin } from '@mdi/js';
 import { Icon } from '@mdi/react';
-import FormLogin from '../FormLogin.component';
+import FormLogin from './FormLogin.component';
 
 const Home = () => {
   const [loginActive, setLoginActive] = useState(false);
@@ -10,15 +10,10 @@ const Home = () => {
     <div className="background-login">
       {loginActive ? (
         <button
-          type="submit"
-          className="btn btn--pink btn--animated max-width-100 animateToLeft"
+          onClick={() => setLoginActive(false)}
+          className="btnX btnX--pink btnX--animated max-width-100 animateToLeft"
         >
-          <Icon
-            onClick={() => setLoginActive(false)}
-            path={mdiArrowLeftCircle}
-            size={1}
-            color="#fff"
-          />
+          <Icon path={mdiArrowLeftCircle} size={1} color="#fff" />
         </button>
       ) : null}
       <div className="background-login_icono">
@@ -28,10 +23,11 @@ const Home = () => {
         {loginActive ? (
           <FormLogin />
         ) : (
-          <div className="btns-container">
+          <div className="btnXs-container">
             <button
+              type="submit"
               onClick={() => setLoginActive(true)}
-              className="btn btn--white btn--animated margin-bottom-30"
+              className="btnX btnX--white btnX--animated margin-bottom-30"
             >
               <Icon
                 className="margin-right-15px"
@@ -42,7 +38,7 @@ const Home = () => {
               />
               Iniciar sesión
             </button>
-            <button className="btn btn--white btn--animated">
+            <button className="btnX btnX--white btnX--animated">
               <Icon
                 className="margin-right-15px"
                 onClick={() => setLoginActive(false)}

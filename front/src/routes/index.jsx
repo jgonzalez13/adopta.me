@@ -6,15 +6,19 @@ import { Switch } from 'react-router-dom';
 import User from '../containers/User.Container';
 
 // ? Components
-import NavBar from '../components/views/protected/NavBar/NavBar';
+import NavBar from '../components/views/protected/NavBar/NavBar.container';
+
+import Spinner from '../shared/Spinner.component';
 
 const HomeView = lazy(() => import('../components/views/Home/Home.container'));
 
 const ChatList = lazy(() =>
-  import('../components/views/protected/ChatList/ChatList')
+  import('../components/views/protected/ChatList/ChatList.container')
 );
 
-const Chat = lazy(() => import('../components/views/protected/Chat/Chat'));
+const Chat = lazy(() =>
+  import('../components/views/protected/Chat/Chat.container')
+);
 
 const CardSwipe = lazy(() =>
   import('../components/views/protected/Swipe/Swipe.component')
@@ -23,7 +27,7 @@ const CardSwipe = lazy(() =>
 const AppRoutes = () => {
   let user = User.useContainer();
   return (
-    <Suspense fallback={<div>Cargando... </div>}>
+    <Suspense fallback={<Spinner size={130} />}>
       <BrowserRouter>
         {user.authentication ? <NavBar /> : null}
         <Switch>
