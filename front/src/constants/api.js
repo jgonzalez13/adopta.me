@@ -1,3 +1,3 @@
 export default {
-  apiEndPoint: 'http://ad251357.ngrok.io'
+  apiEndPoint: 'https://adoptame-back.herokuapp.com'
 };

@@ -7,17 +7,12 @@ import Image from 'react-bootstrap/Image';
 
 //Styles
 import './ChatCard.sass';
-import placeholderMascota from './img/placeholderMascota.png';
+import placeholderMascota from '../../../../assets/chatCard/placeholderMascota.png';
 
 const ChatCard = props => {
   const [count, setCount] = useState(0);
   let history = useHistory();
   let chatId = 15;
-
-  useEffect(() => {
-    console.log(`You've clicked ${count} times`);
-  });
-
   return (
     <Card
       border="success"
