@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { mdiArrowLeftCircle, mdiAccountPlus, mdiLogin } from '@mdi/js';
 import { Icon } from '@mdi/react';
-import FormLogin from '../FormLogin.component';
+import FormLogin from './FormLogin.component';
 
 const Home = () => {
   const [loginActive, setLoginActive] = useState(false);

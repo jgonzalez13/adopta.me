@@ -21,6 +21,7 @@ const Swipe = () => {
           `/swipes?lat=${position.coords.latitude}&lng=${position.coords.longitude}`
         );
         setData(response.data);
+        console.log(response);
       } catch (error) {
         console.log(error);
       }
@@ -43,16 +44,16 @@ const Swipe = () => {
   }
 
   return (
-    <>
+    <div className="swipe">
       {data.length < 0 ? (
         <Spinner size={130} />
       ) : (
         <CardWrapper>
-          {data.map(item => {
+          {data.map((item, i) => {
             return (
               <Cards
                 key={item.id}
-                img={item.img}
+                img={require(`../../../../assets/animals/image-2.jpg`)}
                 name={item.name}
                 distance={item.distance}
                 age={item.age}
@@ -64,7 +65,7 @@ const Swipe = () => {
           })}
         </CardWrapper>
       )}
-    </>
+    </div>
   );
 };
 

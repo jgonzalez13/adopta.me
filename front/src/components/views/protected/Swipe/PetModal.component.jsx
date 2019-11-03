@@ -14,10 +14,10 @@ const PetModal = props => {
         height="100VH"
       >
         <Modal.Header closeButton>
-          {props.img}
+          {/* <img src={props.img}/> */}
         </Modal.Header>
         <Modal.Body>
-          <h4><b>{props.name}</b></h4>
+          <h4><b>{props.name.toUpperCase()}</b></h4>
           <p>
             A {props.distance}km de distancia
             <br />
@@ -29,7 +29,7 @@ const PetModal = props => {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <Button onClick={props.onHide} className="btnl--pink">Close</Button>
         </Modal.Footer>
       </Modal>
     );
